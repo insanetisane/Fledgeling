@@ -1,3 +1,7 @@
+# Requirements
+
+At least version 5.2.0 of npm. (npx comes with npm from this version on)
+
 # Installation
 
 Fledgeling uses [`npx`](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) for building. This means that the devDependencies can be installed globally instead of running `npm i` in the project root.
