@@ -1,0 +1,9 @@
+extends /layouts/default
+
+append settings
+  - title = 'Fledgeling - Home'
+
+include /components/hello-world
+
+block main
+  +hello-world({location: 'Planet', greeting: 'Hey'})

@@ -1,0 +1,10 @@
+:root {
+  --body-bg: lightgrey;
+
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--body-bg);
+  font-size: 1.8rem;
+}

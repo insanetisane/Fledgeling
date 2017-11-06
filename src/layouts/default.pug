@@ -1,0 +1,36 @@
+block settings
+  -
+    title = 'Fledgeling'
+    description = 'A simple, modern, progressivly enhanceable, static site generator and boilerplate using npm scripts and pug.'
+    page = ''
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=1')
+    link(rel='manifest' href='/manifest.json')
+    title #{title}
+    meta(name='description', content='#{description}')
+
+    block styles
+      link(href='/assets/css/reboot.css' rel='stylesheet')
+      link(href='/assets/css/global.css' rel='stylesheet')
+
+    block head
+  body(id=page)
+    block body
+      include header
+    main
+      block main
+    block footer
+      include footer
+    block scripts
+      script(src='assets/js/scripts.js')
+      //- script.
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js', {
+              scope: './'
+          })
+        }

@@ -1,0 +1,34 @@
+{
+  "name": "Fledegling",
+  "version": "1.0.0",
+  "description": "A simple, modern, progressivly enhanceable, static site generator using npm scripts and pug.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "postclean": "mkdir -p dist/assets/{css,js}",
+    "prebuild": "npm run clean",
+    "build": "npx npm-run-all -p build:*",
+    "build:html": "npx pug -b src src/pages -o dist",
+    "build:css": "cp src/css/* dist/assets/css",
+    "build:js": "cp src/js/* dist/assets/js",
+    "build:static": "cp -R src/static/ dist",
+    "watch": "npx npm-run-all -p watch:*",
+    "watch:html": "npx pug -w -b src src/pages -o dist",
+    "watch:css": "npx gaze 'cp $path dist/assets/css' 'src/**/*.css'",
+    "watch:js": "npx gaze 'cp $path dist/assets/js' 'src/**/*.js'",
+    "watch:static": "npx gaze 'cp $path dist' 'src/static/**/*'",
+    "images": "npx -p sharp-cli sharp -i src/static/assets/img/* -o dist/assets/img -q90 -- resize 800 --optimise --nearLossless",
+    "serve": "npx browser-sync start --no-open --no-ui --no-notify -s dist -f dist",
+    "start": "npx npm-run-all -p build watch serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gaze-cli": "^0.2.0",
+    "npm-run-all": "^4.1.1",
+    "pug-cli": "^1.0.0-alpha6"
+  },
+  "dependencies": {}
+}
