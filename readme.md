@@ -45,5 +45,5 @@ Fledgeling is meant to be a fairly plain boilerplate that provides a solid start
 
 - Pug utility mixins for async / lazy loading of assets via loadjs.
 - Production scripts for minimizing / uglifying css, js.
-- Production script for making `.copat` versions of css / js files (using postCSS / babel)
+- Production script for making `.compat` versions of css / js files (using postCSS / babel)
 - Image compression script.
