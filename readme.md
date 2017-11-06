@@ -30,5 +30,6 @@ Fledgeling is meant to be a fairly plain boilerplate that provides a solid start
 
 ## Coming soon
 
-- Production scripts for minimizing / uglifying html, css, js. Image compression script.
+- Production scripts for minimizing / uglifying html, css, js.
+- Image compression script.
 - pug utility mixins for async / lazy loading of assets via loadjs.
