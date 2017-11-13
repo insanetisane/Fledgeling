@@ -1,3 +1,5 @@
 mixin hello-world({greeting = 'Hello', location = 'World'})
-  h1 #{greeting} #{location}!
-  block
+  +loadCss('/assets/css/hello-world.css')
+  .c-hello-world
+    h2 #{greeting} #{location}!
+    block

@@ -1,3 +1,5 @@
+include /components/utils
+
 block settings
   -
     title = 'Fledgeling'
@@ -15,8 +17,9 @@ html(lang='en')
     meta(name='description', content='#{description}')
 
     block styles
-      link(href='/assets/css/reboot.css' rel='stylesheet')
-      link(href='/assets/css/global.css' rel='stylesheet')
+      style
+        include /css/reboot.css
+        include /css/global.css
 
     block head
   body(id=page)
@@ -27,7 +30,7 @@ html(lang='en')
     block footer
       include /components/footer
     block scripts
-      script(src='assets/js/scripts.js')
+      script(src='assets/js/scripts.js' defer)
       //- script.
         if ('serviceWorker' in navigator) {
           navigator.serviceWorker.register('service-worker.js', {

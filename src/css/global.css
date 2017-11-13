@@ -1,24 +1,69 @@
 :root {
   --theme-text: #444;
-  --theme-primary: darkcyan;
-  --theme-secondary: dodgerblue;
+  --theme-primary: dodgerblue;
+  --theme-secondary: darkcyan;
   --theme-tertiary: firebrick;
-  --theme-neutral: lightgrey;
+  --theme-neutral-light: lightgrey;
+  --theme-neutral: darkgrey;
   --theme-neutral-dark: grey;
-  font-size: 62.5%;
+  --theme-font-size: 2rem;
+  --theme-space-default: 3rem;
+  --theme-space-large: 8rem;
+
+  --root-font-size: 62.5%;
+  font-size: var(--root-font-size);
 }
+
+/* @media(min-width: 62.5em) {
+  :root {
+    --root-font-size: calc(62.5% + 0.1vw);
+  }
+} */
 
 body {
   color: var(--theme-text);
-  font-size: 1.8rem;
+  font-size: var(--theme-font-size);
 }
 
-button, .g-button {
-  --button-color: var(--theme-neutral);
+/* h1, h2, h3, h4, h5, h6, .g-heading {
+  font-family: var(--theme-font-title);
+} */
 
+button, .g-button {
+  --button-color: var(--theme-neutral-light);
   background-color: var(--button-color);
   border: 1px solid var(--button-color);
 }
+button:hover, .g-button:hover {
+  --button-color: var(--theme-neutral);
+}
 button:active, .g-button:active {
   --button-color: var(--theme-neutral-dark);
+}
+
+.g-text-right {
+  text-align: right;
+}
+.g-text-default {
+  color: var(--theme-text);
+}
+.g-text-primary {
+  color: var(--theme-primary);
+}
+.g-text-secondary {
+  color: var(--theme-secondary);
+}
+
+.g-bg-white {
+  background-color: white;
+}
+.g-bg-primary {
+  background-color: var(--theme-primary);
+}
+.g-bg-secondary {
+  background-color: var(--theme-secondary);
+}
+.g-inverse {
+  background-color: var(--theme-text);
+  color: white;
 }
