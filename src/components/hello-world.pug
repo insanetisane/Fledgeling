@@ -1,5 +1,6 @@
 mixin hello-world({greeting = 'Hello', location = 'World'})
   +loadCss('/assets/css/hello-world.css')
   .c-hello-world
+    img(data-src="http://unsplash.it/300" alt="Lazy load example")
     h2 #{greeting} #{location}!
     block

@@ -29,6 +29,11 @@ body {
   font-family: var(--theme-font-title);
 } */
 
+img {
+  max-width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+}
+
 button, .g-button {
   --button-color: var(--theme-neutral-light);
   background-color: var(--button-color);

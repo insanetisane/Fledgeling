@@ -30,6 +30,12 @@ html(lang='en')
     block footer
       include /components/footer
     block scripts
+      script
+        include /js/lazyload.min.js
+      script.
+        var myLazyLoad = new LazyLoad({
+          elements_selector: "[data-src]"
+        });
       script(src='assets/js/scripts.js' defer)
       //- script.
         if ('serviceWorker' in navigator) {
